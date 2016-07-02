@@ -46,4 +46,18 @@ public class PersonDaoImpl implements PersonDao {
 			tran.rollback();
 		}
 	}
+
+	@Override
+	public void delete(Person person) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Transaction tran = session.beginTransaction();
+		try{
+			session.delete(person);;
+			tran.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+			tran.rollback();
+		}
+	}
 }

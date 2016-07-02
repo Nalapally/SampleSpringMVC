@@ -51,6 +51,8 @@ public class HomeController {
 		per.setName("Achyutha");
 		personService.saveOrUpdate(per);
 		
+		personService.delete(per);;
+		
 		List<Person> personList = personService.findAll();
 		model.addAttribute("person", personList );
 		

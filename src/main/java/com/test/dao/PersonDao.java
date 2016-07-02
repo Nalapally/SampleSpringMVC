@@ -9,4 +9,6 @@ public interface PersonDao {
 	public List<Person> findAll();
 	
 	public void saveOrUpdate(Person person);
+	
+	public void delete(Person person);
 }

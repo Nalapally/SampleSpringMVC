@@ -27,6 +27,13 @@ public class PersonServiceImpl implements PersonService{
 		personDao.saveOrUpdate(person);
 	}
 
+	@Override
+	public void delete(Person person) {
+		// TODO Auto-generated method stub
+		personDao.delete(person);
+		
+	}
+
 
 	
 }

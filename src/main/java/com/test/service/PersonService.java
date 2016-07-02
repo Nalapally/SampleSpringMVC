@@ -8,4 +8,5 @@ public interface PersonService {
 
 	public List<Person> findAll();
 	public void saveOrUpdate(Person person);
+	public void delete(Person person);
 }
