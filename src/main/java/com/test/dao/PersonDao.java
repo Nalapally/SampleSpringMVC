@@ -7,4 +7,6 @@ import com.test.domain.Person;
 public interface PersonDao {
 
 	public List<Person> findAll();
+	
+	public void saveOrUpdate(Person person);
 }

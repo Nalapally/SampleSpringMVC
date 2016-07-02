@@ -32,4 +32,18 @@ public class PersonDaoImpl implements PersonDao {
 		}
 		return list;
 	}
+
+	@Override
+	public void saveOrUpdate(Person person) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		Transaction tran = session.beginTransaction();
+		try{
+			session.saveOrUpdate(person);
+			tran.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+			tran.rollback();
+		}
+	}
 }

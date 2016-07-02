@@ -46,8 +46,15 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 
+		Person per = new Person();
+		per.setId(5);
+		per.setName("Achyutha");
+		personService.saveOrUpdate(per);
+		
 		List<Person> personList = personService.findAll();
 		model.addAttribute("person", personList );
+		
+		
 		
 		return "home";
 	}

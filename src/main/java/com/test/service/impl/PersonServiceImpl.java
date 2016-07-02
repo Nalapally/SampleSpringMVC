@@ -21,5 +21,12 @@ public class PersonServiceImpl implements PersonService{
 		return personDao.findAll();
 	}
 
+	@Override
+	public void saveOrUpdate(Person person) {
+		// TODO Auto-generated method stub
+		personDao.saveOrUpdate(person);
+	}
+
+
 	
 }
