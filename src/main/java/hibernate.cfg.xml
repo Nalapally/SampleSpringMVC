@@ -15,5 +15,6 @@
 		<property name="hibernate.current_session_context_class">thread</property>
 		
 		<mapping class="com.test.domain.Person" />
+		<mapping class="com.test.domain.Address" />
 	</session-factory>
 </hibernate-configuration>

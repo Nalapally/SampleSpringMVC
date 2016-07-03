@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,11 +13,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.test.dao.impl.PersonDaoImpl;
 import com.test.domain.Person;
 import com.test.service.PersonService;
+
 
 /**
  * Handles requests for the application home page.
@@ -51,14 +49,12 @@ public class HomeController {
 		per.setName("Achyutha");
 		personService.saveOrUpdate(per);
 		
-		personService.delete(per);;
+		personService.delete(per);
 		
 		List<Person> personList = personService.findAll();
-		model.addAttribute("person", personList );
-		
+		model.addAttribute("person", personList );	
 		
 		
 		return "home";
 	}
-	
 }

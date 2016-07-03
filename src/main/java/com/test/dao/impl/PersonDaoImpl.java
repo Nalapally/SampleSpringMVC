@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import com.test.dao.PersonDao;
+import com.test.domain.Address;
 import com.test.domain.Person;
 import com.test.util.*;
 
@@ -25,6 +26,17 @@ public class PersonDaoImpl implements PersonDao {
 		List<Person> list = null;
 		try{
 			list = session.createCriteria(Person.class).list();
+			
+			Person person = new Person();
+			person.setName("HHH");
+			session.save(person);
+			
+			Address add = new Address();
+			add.setAddress("Medchal");
+			add.setPerson(person);
+			session.save(add);
+			
+			
 			tran.commit();
 		}catch(Exception e){
 			e.printStackTrace();
